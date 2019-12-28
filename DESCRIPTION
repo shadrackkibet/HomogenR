@@ -1,0 +1,14 @@
+Package: HomogenR
+Title: HomogenR.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Shadrack Kibet",
+           family = "Magut",
+           role = c("aut", "cre"),
+           email = "shadrackkibet36@outlook.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Provide functions to test homogeneity of a climatological series.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
