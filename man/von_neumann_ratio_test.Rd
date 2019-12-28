@@ -7,7 +7,7 @@
 von_neumann_ratio_test(data, series = "", na.rm = FALSE, ...)
 }
 \arguments{
-\item{series}{}
+\item{...}{}
 }
 \description{
 Von Neumman ratio test

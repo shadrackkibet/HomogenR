@@ -7,7 +7,7 @@
 snht(data, series = "", na.rm = FALSE, dp = 2, ...)
 }
 \arguments{
-\item{series}{}
+\item{...}{}
 }
 \description{
 Standard Normal Homogeneity test(SNHT)

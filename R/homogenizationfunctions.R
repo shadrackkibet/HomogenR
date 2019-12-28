@@ -3,14 +3,14 @@
 
 #' Buishand range test
 #'
-#' @param dataSeries
+#' @param data
+#' @param series
 #' @param na.rm
 #'
 #' @return
 #' @export
 #'
 #' @examples
-library(summaryR)
 Buishand_range_test <- function(data, series = "", na.rm = FALSE) {
   if(missing(series)) stop("Data series name is missing")
   data_series <- data[,series]
@@ -26,14 +26,12 @@ Buishand_range_test <- function(data, series = "", na.rm = FALSE) {
 
 #' craddock test
 #'
-#' @param na.rm
-#' @param ...
 #' @param data
 #' @param col_name1
 #' @param col_name2
-#'
-#' @return
-#' @export
+#' @param na.rm
+#' @param dp
+#' @param ...
 #'
 #' @examples
 Craddock_test <- function(data, col_name1 = "", col_name2 = "", na.rm = FALSE, dp = 2, ...) {
@@ -50,13 +48,11 @@ Craddock_test <- function(data, col_name1 = "", col_name2 = "", na.rm = FALSE, d
 
 #' Standard Normal Homogeneity test(SNHT)
 #'
-#' @param na.rm
-#' @param ...
 #' @param data
 #' @param series
-#'
-#' @return
-#' @export
+#' @param na.rm
+#' @param dp
+#' @param ...
 #'
 #' @examples
 snht <- function(data, series = "", na.rm = FALSE, dp = 2, ...) {
@@ -75,12 +71,9 @@ snht <- function(data, series = "", na.rm = FALSE, dp = 2, ...) {
 
 #' pettit test
 #'
-#' @param ...
 #' @param data
 #' @param series
-#'
-#' @return
-#' @export
+#' @param ...
 #'
 #' @examples
 Pettitt_test <- function(data, series = "", ...) {
@@ -101,13 +94,10 @@ Pettitt_test <- function(data, series = "", ...) {
 
 #' Von Neumman ratio test
 #'
-#' @param na.rm
-#' @param ...
 #' @param data
 #' @param series
-#'
-#' @return
-#' @export
+#' @param na.rm
+#' @param ...
 #'
 #' @examples
 von_neumann_ratio_test <- function(data, series = "", na.rm = FALSE, ...) {
@@ -125,13 +115,10 @@ von_neumann_ratio_test <- function(data, series = "", na.rm = FALSE, ...) {
 
 #' Bayesian test
 #'
-#' @param na.rm
-#' @param ...
 #' @param data
 #' @param series
-#'
-#' @return
-#' @export
+#' @param na.rm
+#' @param ...
 #'
 #' @examples
 bayesian_test <- function(data, series = "", na.rm = FALSE, ...) {

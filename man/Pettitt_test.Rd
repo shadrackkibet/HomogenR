@@ -7,7 +7,7 @@
 Pettitt_test(data, series = "", ...)
 }
 \arguments{
-\item{series}{}
+\item{...}{}
 }
 \description{
 pettit test

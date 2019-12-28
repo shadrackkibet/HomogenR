@@ -8,7 +8,7 @@ Craddock_test(data, col_name1 = "", col_name2 = "", na.rm = FALSE,
   dp = 2, ...)
 }
 \arguments{
-\item{col_name2}{}
+\item{...}{}
 }
 \description{
 craddock test

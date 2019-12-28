@@ -7,7 +7,7 @@
 bayesian_test(data, series = "", na.rm = FALSE, ...)
 }
 \arguments{
-\item{series}{}
+\item{...}{}
 }
 \description{
 Bayesian test
