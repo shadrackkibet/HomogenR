@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "shadrackkibet36@outlook.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Provide functions to test homogeneity of a climatological series.
+Description: Provide functions to test homogeneity of long term climatological series.
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
