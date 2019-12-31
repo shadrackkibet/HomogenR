@@ -4,11 +4,23 @@
 \alias{snht}
 \title{Standard Normal Homogeneity test(SNHT)}
 \usage{
-snht(data, series = "", na.rm = FALSE, dp = 2, ...)
+snht(data_series, na.rm = FALSE, dp = 2, ...)
 }
 \arguments{
-\item{...}{}
+\item{data_series}{A climatological time series.}
+
+\item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
+
+\item{dp}{Integer indicating the number of decimal places (round) to be used. By default "dp=2".}
+
+\item{...}{Additional arguments to be passed into methods.}
+}
+\value{
+The SNHT test statistic.
 }
 \description{
 Standard Normal Homogeneity test(SNHT)
+}
+\author{
+Shadrack Kibet
 }

@@ -1,9 +1,10 @@
 Package: HomogenR
-Title: HomogenR.
-Version: 0.0.0.9000
+Title: Provide functions to test homogeneity of long term climatological series
+Version: 0.1.1
+Date:31-12-2019
 Authors@R: 
-    person(given = "Shadrack Kibet",
-           family = "Magut",
+    person(given = "Shadrack ",
+           family = "Kibet",
            role = c("aut", "cre"),
            email = "shadrackkibet36@outlook.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))

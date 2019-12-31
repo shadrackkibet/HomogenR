@@ -3,17 +3,17 @@
 
 #' Buishand range test
 #'
-#' @param data
-#' @param series
-#' @param na.rm
+#' @param na.rm A logical value indicating whether missing values should be stripped before the computation proceeds.
+#' @param data_series A climatological time series.
+#' @param ... Additional arguments to be passed into methods.
 #'
-#' @return
+#' @return The Buishand range test results.
+#' @author Shadrack Kibet
 #' @export
 #'
 #' @examples
-Buishand_range_test <- function(data, series = "", na.rm = FALSE) {
-  if(missing(series)) stop("Data series name is missing")
-  data_series <- data[,series]
+buishand_range_test <- function(data_series, na.rm = FALSE, ...) {
+  if(missing(data_series)) stop("argument 'data series' is missing with no default")
   n <- length(data_series)
   s2 <- 1:n
   s <- sapply(s2, function(k) {
@@ -24,41 +24,42 @@ Buishand_range_test <- function(data, series = "", na.rm = FALSE) {
   s / summary_sd(data_series, na.rm = na.rm) / sqrt(n)
 }
 
-#' craddock test
+#' Craddock test
 #'
-#' @param data
-#' @param col_name1
-#' @param col_name2
-#' @param na.rm
-#' @param dp
-#' @param ...
+#' @param na.rm A logical value indicating whether missing values should be stripped before the computation proceeds.
+#' @param dp Integer indicating the number of decimal places (round) to be used. By default "dp=2".
+#' @param data_col1 A candidate climatological series.
+#' @param data_col2 A homogeneous reference series.
+#' @param ... Additional arguments to be passed into methods.
+#'
+#' @return Craddock test results.
+#' @author Shadrack Kibet
+#' @export
 #'
 #' @examples
-Craddock_test <- function(data, col_name1 = "", col_name2 = "", na.rm = FALSE, dp = 2, ...) {
-  if (missing(col_name1)||missing(col_name2)) stop("Both columns names must be supplied")
-  data <- as.data.frame(data)
-  col1 <- data[, col_name1]
-  col2 <- data[, col_name2]
-  mean_col1 <- summary_mean(col1, na.rm = na.rm)
-  mean_col2 <- summary_mean(col2, na.rm = na.rm)
-  c2C <- col2 + mean_col1 - mean_col2
-  col_diff <- col1 - c2C
+craddock_test <- function(data_col1, data_col2, na.rm = FALSE, dp = 2, ...) {
+  if (missing(data_col1)||missing(data_col2)) stop("both columns 'data_col1' and 'data_col2' must be supplied")
+  mean_col1 <- summary_mean(data_col1, na.rm = na.rm)
+  mean_col2 <- summary_mean(data_col2, na.rm = na.rm)
+  c2C <- data_col2 + mean_col1 - mean_col2
+  col_diff <- data_col1 - c2C
   round(cumsum(col_diff), digits = dp)
 }
 
 #' Standard Normal Homogeneity test(SNHT)
 #'
-#' @param data
-#' @param series
-#' @param na.rm
-#' @param dp
-#' @param ...
+#' @param na.rm A logical value indicating whether missing values should be stripped before the computation proceeds.
+#' @param dp Integer indicating the number of decimal places (round) to be used. By default "dp=2".
+#' @param data_series A climatological time series.
+#' @param ... Additional arguments to be passed into methods.
+#'
+#' @return The SNHT test statistic.
+#' @author Shadrack Kibet
+#' @export
 #'
 #' @examples
-snht <- function(data, series = "", na.rm = FALSE, dp = 2, ...) {
-  if(missing(series)) stop("Data series name is missing")
-  data <- as.data.frame(data)
-  data_series <- data[,series]
+snht <- function(data_series, na.rm = FALSE, dp = 2, ...) {
+  if(missing(data_series)) stop("argument 'data series' is missing with no default")
   tsn <- (data_series - summary_mean(data_series, na.rm = na.rm)) / summary_sd(data_series, na.rm = na.rm)
   n <- length(data_series)
   zvec <- vector("numeric", n - 1)
@@ -69,17 +70,18 @@ snht <- function(data, series = "", na.rm = FALSE, dp = 2, ...) {
   round(zvec, digits = dp)
 }
 
-#' pettit test
+#' Pettit test
 #'
-#' @param data
-#' @param series
-#' @param ...
+#' @param data_series A climatological time series.
+#' @param ... Additional arguments to be passed into methods.
+#'
+#' @return Pettit test results.
+#' @author Shadrack Kibet
+#' @export
 #'
 #' @examples
-Pettitt_test <- function(data, series = "", ...) {
-  if(missing(series)) stop("Data series name is missing")
-  data <- as.data.frame(data)
-  data_series <- data[,series]
+pettit_test <- function(data_series, ...) {
+  if(missing(data_series)) stop("argument 'data series' is missing with no default")
   n <- length(data_series)
   s2 <- 1:n
   s <- sapply(s2, function(k) {
@@ -92,17 +94,19 @@ Pettitt_test <- function(data, series = "", ...) {
   s
 }
 
-#' Von Neumman ratio test
+#' Von Neumann's ratio test
 #'
-#' @param data
-#' @param series
-#' @param na.rm
-#' @param ...
+#' @param na.rm A logical value indicating whether missing values should be stripped before the computation proceeds.
+#' @param data_series A climatological time series.
+#' @param ... Additional arguments to be passed into methods.
+#'
+#' @return Von Neumann's ratio test results.
+#' @author Shadrack Kibet
+#' @export
 #'
 #' @examples
-von_neumann_ratio_test <- function(data, series = "", na.rm = FALSE, ...) {
-  if(missing(series)) stop("Data series name is missing")
-  data_series <- data[,series]
+von_neumann_ratio_test <- function(data_series, na.rm = FALSE, ...) {
+  if(missing(data_series)) stop("argument 'data series' is missing with no default")
   n <- length(data_series)
   m <- summary_mean(data_series, na.rm = na.rm)
   t1 <- data_series[1:(n - 1)]
@@ -115,15 +119,17 @@ von_neumann_ratio_test <- function(data, series = "", na.rm = FALSE, ...) {
 
 #' Bayesian test
 #'
-#' @param data
-#' @param series
-#' @param na.rm
-#' @param ...
+#' @param na.rm A logical value indicating whether missing values should be stripped before the computation proceeds.
+#' @param data_series A climatological time series.
+#' @param ... Additional arguments to be passed into methods.
+#'
+#' @return The Bayesian test results.
+#' @author Shadrack Kibet
+#' @export
 #'
 #' @examples
-bayesian_test <- function(data, series = "", na.rm = FALSE, ...) {
-  if(missing(series)) stop("Data series name is missing")
-  data_series <- data[,series]
+bayesian_test <- function(data_series, na.rm = FALSE, ...) {
+  if(missing(data_series)) stop("argument 'data series' is missing with no default")
   dx <- summary_sd(data_series, na.rm = na.rm)
   n <- length(data_series)
   k <- 1:n

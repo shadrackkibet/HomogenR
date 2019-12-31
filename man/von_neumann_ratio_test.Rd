@@ -2,13 +2,23 @@
 % Please edit documentation in R/homogenizationfunctions.R
 \name{von_neumann_ratio_test}
 \alias{von_neumann_ratio_test}
-\title{Von Neumman ratio test}
+\title{Von Neumann's ratio test}
 \usage{
-von_neumann_ratio_test(data, series = "", na.rm = FALSE, ...)
+von_neumann_ratio_test(data_series, na.rm = FALSE, ...)
 }
 \arguments{
-\item{...}{}
+\item{data_series}{A climatological time series.}
+
+\item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
+
+\item{...}{Additional arguments to be passed into methods.}
+}
+\value{
+Von Neumann's ratio test results.
 }
 \description{
-Von Neumman ratio test
+Von Neumann's ratio test
+}
+\author{
+Shadrack Kibet
 }
