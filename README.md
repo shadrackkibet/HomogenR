@@ -1,13 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# HomogenR
+# homogenR
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-The goal of HomogenR is to provide functions to check homogeneity of
+The goal of homogenR is to provide functions to check homogeneity of
 long term climatological series.
 
 ## Installation
