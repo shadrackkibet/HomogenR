@@ -4,10 +4,12 @@
 \alias{von_neumann_ratio_test}
 \title{Von Neumann's ratio test}
 \usage{
-von_neumann_ratio_test(data_series, na.rm = FALSE, ...)
+von_neumann_ratio_test(data_series, dp = 2, na.rm = FALSE, ...)
 }
 \arguments{
 \item{data_series}{A climatological time series.}
+
+\item{dp}{Integer indicating the number of decimal places (round) to be used. By default "dp=2".}
 
 \item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
 

@@ -4,10 +4,12 @@
 \alias{bayesian_test}
 \title{Bayesian test}
 \usage{
-bayesian_test(data_series, na.rm = FALSE, ...)
+bayesian_test(data_series, dp = 2, na.rm = FALSE, ...)
 }
 \arguments{
 \item{data_series}{A climatological time series.}
+
+\item{dp}{Integer indicating the number of decimal places (round) to be used. By default "dp=2".}
 
 \item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
 

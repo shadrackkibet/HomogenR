@@ -4,16 +4,18 @@
 \alias{craddock_test}
 \title{Craddock test}
 \usage{
-craddock_test(data_col1, data_col2, na.rm = FALSE, dp = 2, ...)
+craddock_test(data_col1, data_col2, dp = 2, all = FALSE, na.rm = FALSE, ...)
 }
 \arguments{
 \item{data_col1}{A candidate climatological series.}
 
 \item{data_col2}{A homogeneous reference series.}
 
-\item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
-
 \item{dp}{Integer indicating the number of decimal places (round) to be used. By default "dp=2".}
+
+\item{all}{A logical value indicating whether to return all craddock test values otherwise the absolute maximum is returned.}
+
+\item{na.rm}{A logical value indicating whether missing values should be stripped before the computation proceeds.}
 
 \item{...}{Additional arguments to be passed into methods.}
 }

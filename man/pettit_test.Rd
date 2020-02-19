@@ -4,10 +4,14 @@
 \alias{pettit_test}
 \title{Pettit test}
 \usage{
-pettit_test(data_series, ...)
+pettit_test(data_series, all = FALSE, plot = FALSE, ...)
 }
 \arguments{
 \item{data_series}{A climatological time series.}
+
+\item{all}{A logical value indicating whether to return all Pettit test values otherwise the absolute maximum is returned.}
+
+\item{plot}{A logical value to return plot of Pettit test values.}
 
 \item{...}{Additional arguments to be passed into methods.}
 }
